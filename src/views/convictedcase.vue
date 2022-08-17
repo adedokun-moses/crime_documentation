@@ -227,7 +227,7 @@ export default {
           })
           .catch((err) => console.log(err));
         alert("details addedd");
-        window.location.reload();
+        //window.location.reload();
       }
     },
     homebtn() {
