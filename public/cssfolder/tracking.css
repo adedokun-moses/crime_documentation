@@ -47,7 +47,7 @@ table tbody {
     .action {
         width: 100%;
         margin: 20px auto;
-        background: red;
+
     }
     
     .action button {
@@ -57,16 +57,16 @@ table tbody {
         border-radius: 0px;
         outline: none;
         border: none;
-        width: 100%;
+        width: 50%;
     }
     
     .action input {
-        padding: 15px 10px;
+        padding: 15px 59px;
         border-radius: 5px;
         outline: none;
         border: none;
         background: grey;
-        width: 70%;
+       
     }
     
 } 

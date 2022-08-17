@@ -78,6 +78,8 @@ export default {
 body {
   padding: 3px;
   background-image: linear-gradient(to right, rgb(106, 122, 218), white);
+ 
+
 }
 
 .formcontainer {
@@ -164,6 +166,12 @@ p {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+  padding: 3px;
+  background-image: linear-gradient(to right, rgb(106, 122, 218), white);
+  height: 720px;
+
+}
   .formcontainer {
     display: flex;
     width: 90%;

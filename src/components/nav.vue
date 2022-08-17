@@ -179,7 +179,7 @@ nav a {
     background: white;
     width: 100%;
     z-index: 1;
-    height: 50px;
+    height: 70px;
     bottom: 0;
   }
   .toggle {
@@ -197,15 +197,23 @@ nav a {
 .nav_links a {
   padding: 5px 2px;
   border-radius: 3px;
-  margin: 0px 7px;
+  margin: 0px 5px;
   text-align: center;
+
 }
 
 .nav_links a:hover {
   background: green;
   padding: 32px 2px;
   border-radius: 3px;
-  margin: 0px 7px;
+  margin: 0px 5px;
+  color: white;
+}
+.nav_links a:active {
+  background: red;
+  padding: 32px 2px;
+  border-radius: 3px;
+  margin: 0px 5px;
   color: white;
 }
 
