@@ -1,0 +1,64 @@
+{
+  "details": [
+    {
+      "id": 2290,
+      "fname": "John Michaeal",
+      "gender": "Male",
+      "state": "Lagos State",
+      "date_arrested": "22 - 02 - 1996",
+      "date_charged": "02 - 05 - 1998",
+      "crime": "Burgarly",
+      "court": "Federal High Court",
+      "lawyer": "Justice Abubakar",
+      "sentence": "0ne Year Imprisonment"
+    },
+    {
+      "id": 2291,
+      "fname": "John Michaeal",
+      "gender": "Male",
+      "state": "Lagos State",
+      "date_arrested": "22 - 02 - 1996",
+      "date_charged": "02 - 05 - 1998",
+      "crime": "Burgarly",
+      "court": "Federal High Court",
+      "lawyer": "Justice Abubakar",
+      "sentence": "0ne Year Imprisonment"
+    },
+    {
+      "id": 2292,
+      "fname": "John Michaeal",
+      "gender": "Male",
+      "state": "Lagos State",
+      "date_arrested": "22 - 02 - 1996",
+      "date_charged": "02 - 05 - 1998",
+      "crime": "Burgarly",
+      "court": "Federal High Court",
+      "lawyer": "Justice Abubakar",
+      "sentence": "0ne Year Imprisonment"
+    },
+    {
+      "id": 2293,
+      "fname": "John Michaeal",
+      "gender": "Male",
+      "state": "Lagos State",
+      "date_arrested": "22 - 02 - 1996",
+      "date_charged": "02 - 05 - 1998",
+      "crime": "Burgarly",
+      "lawyer": "Justice Abubakar",
+      "court": "Federal High Court",
+      "sentence": "0ne Year Imprisonment"
+    },
+    {
+      "id": 2294,
+      "fname": "John Michaeal",
+      "gender": "Male",
+      "state": "Lagos State",
+      "date_arrested": "22 - 02 - 1996",
+      "date_charged": "02 - 05 - 1998",
+      "crime": "Burgarly",
+      "court": "Federal High Court",
+      "lawyer": "Justice Abubakar",
+      "sentence": "0ne Year Imprisonment"
+    }
+  ]
+}

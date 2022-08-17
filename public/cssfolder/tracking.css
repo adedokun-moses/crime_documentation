@@ -1,0 +1,72 @@
+.action {
+    width: 50%;
+    margin: 20px auto;
+}
+
+.action button {
+    margin: 10px;
+    padding: 15px 10px;
+/*     background: red; */
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.action input {
+    padding: 15px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background: grey;
+}
+
+.col-table {
+    width: 100%;
+    margin: 30px 0px 0px 0px;
+    height: 600px;
+    overflow: auto;
+}
+
+table {
+    margin: 20px 0px;
+    width: 100%;
+/*     background: yellow; */
+}
+
+table th,
+td {
+    padding: 10px 10px;
+    text-align: left;
+}
+
+table tbody {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .action {
+        width: 100%;
+        margin: 20px auto;
+        background: red;
+    }
+    
+    .action button {
+        margin:10px 0px;
+        padding: 15px 10px;
+    /*     background: red; */
+        border-radius: 0px;
+        outline: none;
+        border: none;
+        width: 100%;
+    }
+    
+    .action input {
+        padding: 15px 10px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background: grey;
+        width: 70%;
+    }
+    
+} 
