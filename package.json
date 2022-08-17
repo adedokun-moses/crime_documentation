@@ -2,9 +2,11 @@
   "name": "naijacrime",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^0.27.2",
@@ -13,6 +15,8 @@
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.2"
+
+    
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
