@@ -19,7 +19,7 @@
             324 11
           </li>
           <li>
-            <i class="fa fa-email fa-1x" style="padding-right: 20px">Email:</i>
+            <i class="fa fa-envelope fa-1x"> Email:</i>
             pressforabuja@police.gov.ng
           </li>
         </ul>

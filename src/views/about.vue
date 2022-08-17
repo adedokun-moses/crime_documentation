@@ -229,7 +229,7 @@ export default {
 .security_tips h4 {
   font-size: 20px;
   text-align: center;
-  padding: 0px 0px;
+  padding: 10px 0px;
 }
 
 .securitytips ul {

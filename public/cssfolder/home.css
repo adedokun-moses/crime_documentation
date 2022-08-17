@@ -12,13 +12,14 @@
 
     padding: 100px 0px;
     width: 50%;
+ 
 }
 
 .video h5 {
     margin-top: 70px;
     font-size: 50px;
     text-align: left;
-    color: blue;
+
 }
 
 .small {
@@ -102,29 +103,20 @@
     
     }
 
-    .video {
-        padding: 100px 0px 0px 10px;
-        width: 100%;
- 
+    .video h5{
+        padding: 0px 10px;
+        font-size: 30px;
+        color: blue;
     }
 
-    .video h5 {
-        font-size: 100px;
-        text-align: left;
-      
-    }
 
 
     .small {
         font-size: 20px;
+        color: red;
     }
 
-    .home h5 {
-        margin: 10px;
-        font-size: 5px;
-        padding: 0px 00px;
-        color: black;
-    }
+  
 
     .inpsector h5 {
         display: block;

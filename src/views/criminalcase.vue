@@ -120,4 +120,40 @@ form {
   font-weight: bold;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 100%;
+    margin: 20px auto;
+  }
+  .formgroup input {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 13px 5px;
+    outline: none;
+  }
+  .statement input {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 13px 5px;
+    outline: none;
+  }
+
+  .statement textarea {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 13px 5px;
+    outline: none;
+  }
+  .submitbtn button {
+    margin: 1px;
+    padding: 20px 25.6px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
 </style>

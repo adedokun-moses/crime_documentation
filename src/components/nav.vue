@@ -179,7 +179,7 @@ nav a {
     background: white;
     width: 100%;
     z-index: 1;
-    height: 70px;
+    height: 60px;
     bottom: 0;
   }
   .toggle {

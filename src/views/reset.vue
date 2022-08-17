@@ -136,7 +136,7 @@ p {
 @media only screen and (max-width: 600px) {
   .formcontainer {
     display: flex;
-    width: 90%;
+    width: 100%;
   }
   .details2 form {
     margin-top: 10px;
@@ -151,7 +151,7 @@ p {
   .details2 img {
     display: block;
     width: 40%;
-    margin: auto;
+    margin: 30px auto;
     padding: 0px;
   }
 }
