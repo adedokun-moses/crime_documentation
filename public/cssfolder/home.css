@@ -8,15 +8,17 @@
     background-size: 100% 100%;
 }
 
-.video{
+.video {
 
     padding: 100px 0px;
     width: 50%;
 }
+
 .video h5 {
     margin-top: 70px;
     font-size: 50px;
     text-align: left;
+    color: blue;
 }
 
 .small {
@@ -92,28 +94,34 @@
     .home {
         margin: 0px;
         padding: 0px;
-        background: url(/src/assets/newpolice.webp) fixed;
+        background: url(/src/assets/newpolice.webp);
         height: 400px;
         width: 100%;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+    
     }
-    .video{
 
-        padding: 10px 10px;
+    .video {
+        padding: 100px 0px 0px 10px;
         width: 100%;
+ 
     }
 
     .video h5 {
-        margin-top: 0px;
-        font-size: 10px;
+        font-size: 100px;
         text-align: left;
-        color: red;
+      
     }
-    
+
+
+    .small {
+        font-size: 20px;
+    }
+
     .home h5 {
-        margin: 0px;
-        font-size: 30px;
+        margin: 10px;
+        font-size: 5px;
         padding: 0px 00px;
         color: black;
     }

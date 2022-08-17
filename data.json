@@ -60,27 +60,6 @@
       "convicted_date": "2022-08-18",
       "date_charged": "2022-08-21",
       "court": "Algbon",
-      "lawyer": "Justice Alagbon 2",
-      "id": 22019
-    },
-    {
-      "fname": "Aded",
-      "mname": "kdkk",
-      "sname": "mdmdm",
-      "address": "mmdmdmm",
-      "state": "Delta",
-      "gender": "Female",
-      "date_arrested": "2022-08-18",
-      "release_date": "",
-      "prison": "Prison",
-      "marital_status": "Married",
-      "sentencedate": "",
-      "sentence": "Death",
-      "dateArrested": "",
-      "crime": "Adek",
-      "convicted_date": "2022-08-18",
-      "date_charged": "2022-08-21",
-      "court": "Algbon",
       "lawyer": "Justice Alagbon",
       "id": 22020
     }

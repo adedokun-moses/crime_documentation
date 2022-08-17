@@ -174,7 +174,8 @@ p {
 }
   .formcontainer {
     display: flex;
-    width: 90%;
+    width: 100%;
+     height: 500px;
   }
   .details2 form {
     margin-top: 10px;
@@ -189,7 +190,7 @@ p {
   .details2 img {
     display: block;
     width: 40%;
-    margin: auto;
+    margin: 10px auto;
     padding: 0px;
   }
 }

@@ -209,14 +209,14 @@ nav a {
   margin: 0px 5px;
   color: white;
 }
-.nav_links a:active {
+/* .nav_links a:active {
   background: red;
   padding: 32px 2px;
   border-radius: 3px;
   margin: 0px 5px;
   color: white;
 }
-
+ */
   .log {
     text-align: left;
     display: flex;
