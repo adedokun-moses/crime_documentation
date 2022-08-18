@@ -19,14 +19,14 @@
     <div class="igp_speech">
       <div style="flex-basis: 20%; text-align: center" class="igpimage">
         <img src="../assets/igp.jpg" />
-        <p>
+        <p style="text-align: center">
           IGP Usman Alkali Baba, psc (+), fdc, NPM <br />
           Inspector General of Police
         </p>
       </div>
       <div>
         <h4>
-          It is with total appreciation of Almighty Allah (SWT), the Most
+         1.  It is with total appreciation of Almighty Allah (SWT), the Most
           Beneficent, that I address you all on this day which marks the formal
           transfer of leadership of the Nigeria Police Force from the out-going
           20th indigenous Inspector General of Police, IGP Mohammed Abubakar

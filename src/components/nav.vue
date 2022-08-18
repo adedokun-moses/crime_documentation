@@ -21,49 +21,41 @@
     </div>
   </nav>
 
-  <div class="mobile">
-    <nav>
-      <div class="logo">
-        <router-link to="/dashboard">
-          <img src="../assets/pollogo.jpg" alt="" />
-          <h5>
-            Nigeria <br />
-            Police Force
-          </h5>
-        </router-link>
-      </div>
+  <nav class="mobile">
+    <div class="logo">
+      <router-link to="/dashboard">
+        <img src="../assets/pollogo.jpg" alt="" />
+        <h5>
+          Nigeria <br />
+          Police Force
+        </h5>
+      </router-link>
+    </div>
 
-      <div class="nav_links">
+    <div class="nav_links">
+      <router-link to="/dashboard">
+        <i class="fa fa-home"> <p style="margin-top: 7px">Home</p></i>
+      </router-link>
 
-        
-         
-        <router-link to="/dashboard">
-          <i class="fa fa-home">
-              <p style="margin-top: 7px;"> Home</p></i
-          >
-        </router-link>
-        
-        <router-link to="/convictedcase">
-          <i class="fa fa-file">
-              <p style="margin-top: 7px;"> New Case</p></i
-          >
-        </router-link>
-        <router-link to="/tracking">
-          <i class="fa fa-history">
-               <p style="margin-top: 7px;"> Track Case</p></i
-          >
-        </router-link>
+      <router-link to="/convictedcase">
+        <i class="fa fa-file"> <p style="margin-top: 7px">New Case</p></i>
+      </router-link>
+      <router-link to="/tracking">
+        <i class="fa fa-history"> <p style="margin-top: 7px">Track Case</p></i>
+      </router-link>
 
-        <router-link class="log__" to="/about">
-          <i class="fa fa-handshake-o">
-            <p style="margin-top: 7px;"> Your Right</p>
-           </i
-          ></router-link
-        >
-        <a href="#" class="log_" @click="logout()"> <i class="fa fa-key fa-1x"><p style="margin-top: 7px">Log Out</p>  </i></a>
-      </div>
-    </nav>
-  </div>
+      <router-link class="log__" to="/about">
+        <i class="fa fa-handshake-o">
+          <p style="margin-top: 7px">Your Right</p>
+        </i></router-link
+      >
+      <a href="#" class="log_" @click="logout()">
+        <i class="fa fa-key fa-1x"
+          ><p style="margin-top: 7px">Log Out</p>
+        </i></a
+      >
+    </div>
+  </nav>
 </template>
 
 <script>
@@ -74,11 +66,11 @@ export default {
     };
   },
   methods: {
-     logout() {
+    logout() {
       this.$router.push("/");
     },
 
-  /*   btn_toggle(){
+    /*   btn_toggle(){
       if(this.mobilenav == true){
           return (this.mobilenav = false);
       }
@@ -100,7 +92,7 @@ nav {
   margin: 0px;
   border-radius: 2px;
   position: fixed;
-  background:white;
+  background: white;
   z-index: 1;
   width: 100%;
 }
@@ -179,12 +171,11 @@ nav a {
     background: white;
     width: 100%;
     z-index: 1;
-    height: 60px;
+    height: 80px;
     bottom: 0;
+    padding: 15px 0px;
   }
-  .toggle {
-    margin: 10px;
-  }
+
 
   .logo {
     display: none;
@@ -192,31 +183,33 @@ nav a {
   .nav {
     display: flex;
     align-items: center;
+ 
+    
+
   }
 
-.nav_links a {
-  padding: 5px 2px;
-  border-radius: 3px;
-  margin: 0px 5px;
-  text-align: center;
+  .nav_links a {
+    padding: 0px 2px;
+    border-radius: 0px;
+    margin: 10px 4px;
+ 
+  }
 
+  .nav_links a:hover {
+    background: none;
+    padding: 0px 2px;
+    border-radius: 3px;
+    margin: 10px 4px;
+    color: black;
+  }
+/*    .nav_links a:focus {
+   background: black;
+    padding: 0px 2px;
+    border-radius: 3px;
+    margin: 10px 4px;
+    color: white;
 }
-
-.nav_links a:hover {
-  background: green;
-  padding: 32px 2px;
-  border-radius: 3px;
-  margin: 0px 5px;
-  color: white;
-}
-/* .nav_links a:active {
-  background: red;
-  padding: 32px 2px;
-  border-radius: 3px;
-  margin: 0px 5px;
-  color: white;
-}
- */
+  */
   .log {
     text-align: left;
     display: flex;
@@ -224,16 +217,16 @@ nav a {
 
   .log__:hover {
     background: black;
-    padding: 28px 3px;
+    padding: 8px 3px;
     border-radius: 3px;
     margin: 0px 5px;
     color: white;
   }
   .log_ {
     background: none;
-    padding: 28px 13px;
+    padding: 8px 13px;
     border-radius: 3px;
-    margin: 0px 5px;
+    margin: 0px 0px;
     color: black;
   }
 }
