@@ -218,6 +218,7 @@ export default {
   height: 300px;
   box-shadow: 3px 3px 3px 5px grey;
   border-radius: 10px;
+  color: white;
 }
 .security_tips h5 {
   font-size: 50px;
