@@ -90,28 +90,42 @@ export default {
 form {
   width: 70%;
   margin: 20px auto;
+  background: white;
+  padding: 20px 10px;
+  border-radius: 10px;
+}
+form h4, p{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 20px;
 }
 .formgroup input {
-  width: 30%;
+  width: 32%;
   margin: 10px 5px;
   padding: 13px 5px;
   outline: none;
 }
+.formgroup label{
+  margin: 0px 8px;
+}
+.statement label{
+  margin: 0px 8px;
+}
 .statement input {
-  width: 95%;
+  width: 98%;
   margin: 10px 5px;
   padding: 13px 5px;
   outline: none;
 }
 
 .statement textarea {
-  width: 95%;
+  width: 98%;
   margin: 10px 5px;
   padding: 13px 5px;
   outline: none;
 }
 .submitbtn button {
-  margin: 7px;
+  margin: 10px 7px;
   padding: 20px 15px;
   border: none;
   outline: none;
@@ -119,6 +133,7 @@ form {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  width: 48.3%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -146,7 +161,7 @@ form {
     outline: none;
   }
   .submitbtn button {
-    margin: 1px;
+    margin: 5px 1px;
     padding: 20px 25.6px;
     border: none;
     outline: none;
@@ -154,6 +169,7 @@ form {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    width: 100%;
   }
 }
 </style>

@@ -62,6 +62,27 @@
       "court": "Algbon",
       "lawyer": "Justice Alagbon",
       "id": 22020
+    },
+    {
+      "fname": "ade",
+      "mname": "rose",
+      "sname": "jsjsj",
+      "address": "dhdhdhdhdh",
+      "state": "Abuja",
+      "gender": "Female",
+      "date_arrested": "2022-08-22",
+      "release_date": "",
+      "prison": "jsjs_up",
+      "marital_status": "Married",
+      "sentencedate": "",
+      "sentence": "jdjdjdj",
+      "dateArrested": "",
+      "crime": "jdjdj",
+      "convicted_date": "2022-08-29",
+      "date_charged": "2022-08-15",
+      "court": "jdjdj",
+      "lawyer": "justice mike",
+      "id": 22021
     }
   ]
 }

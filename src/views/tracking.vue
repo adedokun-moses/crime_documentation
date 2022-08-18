@@ -4,8 +4,10 @@
     <Intro :title="title" />
   </div>
   <div class="action">
+    
     <button @click="update(checkedresult)" style="background: green">
-      <i class="fa fa-pencil" style="margin-right: 5px"></i> Update Convict Record
+      <i class="fa fa-pencil" style="margin-right: 5px"></i> Update Convict
+      Record
     </button>
 
     <button @click="delete_criminal(checkedresult)">
@@ -13,14 +15,7 @@
       Record
     </button>
 
-    <div
-      style="
-        background: grey;
-        display: inline-block;
-        padding: 0px 20px;
-        border-radius: 7px;
-      "
-    >
+    <div class="input">
       <i class="fa fa-search"></i>
       <input type="text" placeholder=" CASE NO" v-model="search" />
     </div>
@@ -50,7 +45,6 @@
       </thead>
 
       <tbody v-for="data in filteredList()" :key="data.id">
-       
         <td>
           <input type="checkbox" :value="data.id" @change="opendet($event)" />
         </td>
@@ -154,21 +148,22 @@ export default {
         const index = (this.datas = this.datas.filter(
           (data) => data.checkedresult !== this.checkedresult
         ));
-        if (~index)  // if the post exists in array
+        if (~index)
+          // if the post exists in array
           this.datas.splice(index, 1); //delete the post
-           //  this.delete_criminal()
+        //  this.delete_criminal()
         swal("Details Deleted!", "Click Ok to continue!", "success", {
           button: "Ok!",
-        }); 
+        });
       }
     },
 
     filteredList() {
       if (this.search) {
         return this.datas.filter((item) => {
-          return data.id
+          return data.checkedresult
             .toLowerCase()
-            .split(" ")
+            .split("")
             .every((v) => item.name.toLowerCase().includes(v));
         });
       } else {

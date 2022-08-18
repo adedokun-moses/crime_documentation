@@ -1,10 +1,11 @@
 .action {
-    width: 50%;
+    width: 60%;
     margin: 20px auto;
+    display: flex;
 }
 
 .action button {
-    margin: 10px;
+    margin: 10px 10px;
     padding: 15px 10px;
 /*     background: red; */
     border-radius: 5px;
@@ -12,12 +13,24 @@
     border: none;
 }
 
-.action input {
-    padding: 15px 10px;
+.input input {
+    padding: 15px 0px;
     border-radius: 5px;
     outline: none;
     border: none;
+    margin: 0px 7px;
     background: grey;
+    width: 80%;
+    color: white;
+  
+   
+}
+.input{
+    background: grey;
+    width: 50%;
+    margin: auto;
+    padding: 0px 10px;
+    border-radius: 5px;
 }
 
 .col-table {
@@ -30,12 +43,14 @@
 table {
     margin: 20px 0px;
     width: 100%;
-/*     background: yellow; */
+    color: white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 table th,
 td {
-    padding: 10px 10px;
+    padding: 10px 20px;
     text-align: left;
 }
 
@@ -47,27 +62,38 @@ table tbody {
     .action {
         width: 100%;
         margin: 20px auto;
+        flex-direction: column;
 
     }
     
     .action button {
         margin:10px 0px;
-        padding: 15px 10px;
+        padding: 15px 5px;
     /*     background: red; */
         border-radius: 0px;
         outline: none;
         border: none;
-        width: 50%;
+        width: 100%;
     }
     
-    .action input {
-        padding: 15px 59px;
+    .input input {
+        padding: 15px 0px;
         border-radius: 5px;
         outline: none;
         border: none;
+        margin: 0px 7px;
         background: grey;
+        width: 80%;
+        color: white;
       
        
     }
+    .input{
+        background: grey;
+        width: 100%;
+        margin: auto;
+        padding: 0px 10px;
+    }
+
     
 } 
