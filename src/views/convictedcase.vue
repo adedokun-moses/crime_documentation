@@ -9,7 +9,6 @@
         class="imagePreviewWrapper"
         :style="{ 'background-image': `url(${previewImage})` }"
         @click="selectImage"
-        @change="onFileSelected"
       ></div>
       <input ref="fileInput" type="file" @input="pickFile" />
       <button @click="upload" class="button">Upload Convict Picture</button>
@@ -173,8 +172,8 @@ export default {
     pickFile() {
       let input = this.$refs.fileInput;
       let file = input.files;
+      let reader = new FileReader();
       if (file && file[0]) {
-        let reader = new FileReader();
         reader.onload = (e) => {
           this.previewImage = e.target.result;
         };
@@ -183,18 +182,20 @@ export default {
       }
     },
 
-    onFileSelected(event) {
+    /* onFileSelected(event) {
       this.selectedFile = event.target.files[0];
-    },
+      
+    }, */
 
-    upload() {
+    /*  upload() {
       const fd = new FormData();
+
       fd.append("image", this.selectedFile),
         axios.post("http://localhost:3000/details", fd).then((res) => {
           console.log(res);
         });
-        alert("Picture Uploaded, Kindly fill other details and proceed")
-    },
+      alert("Picture Uploaded, Kindly fill other details and proceed");
+    }, */
 
     async addItem() {
       if (this.fname == "" || this.mname == "" || this.sname == "") {
@@ -220,7 +221,7 @@ export default {
             date_charged: this.date_charged,
             court: this.court,
             lawyer: this.lawyer,
-            //  image: this.image
+            image: this.previewImage
           })
           .then((response) => {
             console.log(response);

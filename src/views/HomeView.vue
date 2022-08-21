@@ -16,9 +16,10 @@
             {{ error_msg }}
           </h4>
           <input type="password" v-model="password" placeholder="Password" />
-          <span style="color: red; font-size: 13px; margin: 0px; padding: 0px">
-            {{ error_msg_pass }}
-          </span>
+           <h4 style="color: red; font-size: 13px; margin: 0px; padding: 0px">
+             {{ error_msg_pass }}
+          </h4>
+        
 
           <button type="button" @click="home()">Log In</button>
           <p>Forgot Password? <router-link to="/reset">Reset Here</router-link></p>
@@ -87,7 +88,7 @@ body {
   align-items: stretch;
   background-color: white;
   width: 70%;
-  margin: 75px auto;
+  margin: 55px auto;
   height: 500px;
   box-shadow: 3px 5px 5px 3px black;
 }

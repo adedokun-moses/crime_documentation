@@ -13,6 +13,7 @@
 export default {
   mounted() {
     setTimeout(() => this.$router.push({ path: "/dashboard" }), 4000);
+
   },
 };
 </script>
@@ -24,7 +25,8 @@ export default {
   margin: 0px;
   text-align: center;
   font-size: 30px;
-  height: 100vh;
+
+
 }
 .cover img {
   width: 40%;

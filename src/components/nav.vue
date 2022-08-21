@@ -132,7 +132,7 @@ nav a {
 }
 
 .log_:hover {
-  background: black;
+  background: darkblue;
   padding: 10px 13px;
   border-radius: 3px;
   margin: 0px 5px;
@@ -146,7 +146,7 @@ nav a {
 }
 
 .nav_links a:hover {
-  background: black;
+  background: darkblue;
   padding: 10px 8px;
   border-radius: 3px;
   margin: 0px 5px;
@@ -154,7 +154,7 @@ nav a {
 }
 
 .log__:hover {
-  background: black;
+  background: darkblue;
   padding: 10px 13px;
   border-radius: 3px;
   margin: 0px 5px;

@@ -4,7 +4,6 @@
     <Intro :title="title" />
   </div>
   <div class="action">
-    
     <button @click="update(checkedresult)" style="background: green">
       <i class="fa fa-pencil" style="margin-right: 5px"></i> Update Convict
       Record
@@ -26,22 +25,17 @@
       <thead>
         <th>Select</th>
         <th>Case Number</th>
-
         <th>First Name</th>
-        <th>Middle Name</th>
         <th>Surname</th>
-        <th>Gender</th>
-        <th>Marital Status</th>
         <th>State</th>
-        <th>Address</th>
         <th>Date Arrested</th>
         <th>Date Charged</th>
         <th>Convicted Date</th>
-        <th>Lawyer Name</th>
+        <!--     <th>Lawyer Name</th>
         <th>Court</th>
         <th>Crime Committed</th>
         <th>Sentence Received</th>
-        <th>Prison</th>
+        <th>Prison</th> -->
       </thead>
 
       <tbody v-for="data in filteredList()" :key="data.id">
@@ -52,22 +46,17 @@
         <td>
           {{ data.id }}
         </td>
-        <!--     <td>{{data.image}}</td> -->
+
         <td>{{ data.fname }}</td>
-        <td>{{ data.mname }}</td>
+
         <td>{{ data.sname }}</td>
-        <td>{{ data.gender }}</td>
-        <td>{{ data.marital_status }}</td>
+
         <td>{{ data.state }}</td>
-        <td>{{ data.address }}</td>
+
         <td>{{ data.date_arrested }}</td>
         <td>{{ data.date_charged }}</td>
         <td>{{ data.convicted_date }}</td>
-        <td>{{ data.lawyer }}</td>
-        <td>{{ data.court }}</td>
-        <td>{{ data.crime }}</td>
-        <td>{{ data.sentence }}</td>
-        <td>{{ data.prison }}</td>
+        <td><Modal /></td>
       </tbody>
     </table>
   </div>
@@ -81,10 +70,11 @@
 import Nav from "../components/nav.vue";
 import Intro from "../components/intro.vue";
 import Footer from "../components/footer.vue";
+import Modal from "../components/modal.vue";
 //import data from "/data.json";
 import axios from "axios";
 export default {
-  components: { Nav, Intro, Footer },
+  components: { Nav, Intro, Footer, Modal },
   data() {
     return {
       title: "Crimnal Records ",
@@ -160,15 +150,17 @@ export default {
 
     filteredList() {
       if (this.search) {
-        return this.datas.filter((item) => {
+        return this.datas.filter((data) => {
           return data.checkedresult
             .toLowerCase()
             .split("")
-            .every((v) => item.name.toLowerCase().includes(v));
+            .every((v) => data.name.toLowerCase().includes(v));
         });
       } else {
         return this.datas;
+         
       }
+    
     },
   },
 };

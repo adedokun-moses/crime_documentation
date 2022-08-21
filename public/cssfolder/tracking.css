@@ -57,6 +57,15 @@ td {
 table tbody {
     width: 100%;
 }
+table button{
+    padding: 10px;
+    border-radius: 3px;
+    background: darkblue;
+    color: white;
+    outline: none;
+    border: none;
+    font-weight: bold;
+}
 
 @media only screen and (max-width: 600px) {
     .action {

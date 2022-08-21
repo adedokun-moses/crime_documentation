@@ -50,8 +50,9 @@
 
 <style scoped>
 footer {
-  background: rgb(203, 203, 217);
+  background: darkblue;
   margin-top: 5rem;
+  color: white;
 }
 footer h5 {
   display: block;
@@ -66,11 +67,12 @@ footer h5 {
 }
 .socialmedia i {
   margin: 20px;
+  color: white;
 }
 
 .socialmedia i:hover {
   margin: 20px;
-  color: white;
+  color: black;
 }
 .details {
   display: flex;

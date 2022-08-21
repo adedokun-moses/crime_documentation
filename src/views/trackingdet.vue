@@ -12,7 +12,7 @@
         @click="selectImage"
       ></div>
       <input ref="fileInput" type="file" @input="pickFile" />
-      <button @click="upload" class="button">Upload</button>
+      <!--    <button @click="upload" class="button">Upload</button> -->
     </div>
 
     <div style="flex-basis: 100%">
@@ -170,8 +170,8 @@ export default {
     pickFile() {
       let input = this.$refs.fileInput;
       let file = input.files;
+      let reader = new FileReader();
       if (file && file[0]) {
-        let reader = new FileReader();
         reader.onload = (e) => {
           this.previewImage = e.target.result;
         };
@@ -201,6 +201,7 @@ export default {
             this.crime = res.crime;
             this.court = res.court;
             this.lawyer = res.lawyer;
+            this.previewImage = res.image;
 
             // console.log(res.fname);
           }
@@ -232,6 +233,7 @@ export default {
           date_charged: this.date_charged,
           court: this.court,
           lawyer: this.lawyer,
+          image: this.previewImage,
         })
         .then((response) => {
           console.log(response);
@@ -242,24 +244,6 @@ export default {
         .catch((err) => console.log(err));
       // this.$router.go('/')
     },
-
-    /*    async updateDetails(id) {
-      try {
-        await axios.patch(`${`http://localhost:3000/details`}/${id}`, {
-          updateDetails: true,
-        });
-
-        this.datas = this.datas.map((data) => {
-          if (data.id === id) {
-            data.updateDetails = true;
-          }
-
-          return data;
-        });
-      } catch (e) {
-        console.error(e);
-      }
-    }, */
   },
 
   mounted() {
@@ -451,7 +435,7 @@ form {
     margin: 7px 5px;
     width: 100%;
   }
-    .formgroup__ {
+  .formgroup__ {
     display: block;
   }
 
@@ -481,7 +465,7 @@ form {
   .statement input {
     width: 100%;
   }
-    .submitbtn button {
+  .submitbtn button {
     width: 100%;
     display: inline-block;
     margin: 20px 30px 10px 0px;
