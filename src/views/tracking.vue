@@ -56,7 +56,7 @@
         <td>{{ data.date_arrested }}</td>
         <td>{{ data.date_charged }}</td>
         <td>{{ data.convicted_date }}</td>
-        <td><Modal /></td>
+        <td><Modal/></td>
       </tbody>
     </table>
   </div>

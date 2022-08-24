@@ -51,11 +51,12 @@ const routes = [
     name: 'trackingdet',
     component: Trackingdet
   },
+
   {
     path: '/about',
     name: 'about',
     component: About
-  },
+  }
 ]
 
 const router = createRouter({

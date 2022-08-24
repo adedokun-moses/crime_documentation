@@ -8,10 +8,13 @@
       <span class="close">&times;</span>
       <table>
         <thead>
-          <th>Case Number</th>
           <th>First Name</th>
+          <th>Middle Name</th>
           <th>Surname</th>
+          <th>Gender</th>
+          <th>Marial Status</th>
           <th>State</th>
+          <th>Address</th>
           <th>Date Arrested</th>
           <th>Date Charged</th>
           <th>Convicted Date</th>
@@ -50,8 +53,8 @@ export default {
   data() {
     return {
       datas: [],
-      // id: this.$route.params.id,
-  /*     fname: "",
+      id: this.$route.params.id,
+      fname: "",
       mname: "",
       sname: "",
       address: "",
@@ -68,21 +71,11 @@ export default {
       crime: "",
       convicted_date: "",
       court: "",
-      lawyer: "", */
+      lawyer: "",
     };
   },
 
   methods: {
-
-    async mounted() {
-      try {
-        const res = await axios.get(` http://localhost:3000/details`);
-        this.datas = res.data;
-      } catch (error) {
-        console.log(error);
-      }
-    },
-
     openModal() {
       //alert("working");
       // Get the modal
@@ -108,9 +101,53 @@ export default {
       window.onclick = function (event) {
         if (event.target == modal) {
           modal.style.display = "none";
+       
         }
       };
     },
+
+  /*   async fetchDetails() {
+      try {
+        const dtres = await axios.get(`http://localhost:3000/details`);
+        //this.datas = dtres.data;
+        dtres.data.forEach((res) => {
+          if (res.id == this.id) {
+            this.fname = res.fname;
+            this.mname = res.mname;
+            this.sname = res.sname;
+            this.address = res.address;
+            this.gender = res.gender;
+            this.state = res.state;
+            this.date_charged = res.date_charged;
+            this.marital_status = res.marital_status;
+            this.date_arrested = res.date_arrested;
+            this.release_date = res.release_date;
+            this.prison = res.prison;
+            this.sentence = res.sentence;
+            this.convicted_date = res.convicted_date;
+            this.crime = res.crime;
+            this.court = res.court;
+            this.lawyer = res.lawyer;
+            this.previewImage = res.image;
+
+            // console.log(res.fname);
+          }
+        });
+
+        //console.log(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }, */
+  },
+
+  async mounted() {
+    try {
+      const res = await axios.get(` http://localhost:3000/details`);
+      this.datas = res.data;
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>
@@ -166,8 +203,11 @@ button {
 }
 
 .modal-content table {
-  color: red;
-  font-size: 13px;
+  color: black;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+
 }
 
 @media only screen and (max-width: 600px) {

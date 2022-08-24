@@ -244,6 +244,9 @@ export default {
         .catch((err) => console.log(err));
       // this.$router.go('/')
     },
+      homebtn() {
+      this.$router.push("/tracking");
+    },
   },
 
   mounted() {
@@ -251,18 +254,7 @@ export default {
     // this.updateDetails();
     /*  this.singleDet() */
   },
-  /* 
-    singleDet() {
-      //alert(this.id)
-      this.datas.forEach((res) => {
-        if (res.id == this.id) {
-          this.fname = res.fname;
-          this.mname = res.mname;
-          this.sname = res.sname;
-          console.log(res.fname);
-        }
-      });
-    }, */
+ 
 };
 </script>
 
