@@ -11,7 +11,6 @@
         @click="selectImage"
       ></div>
       <input ref="fileInput" type="file" @input="pickFile" />
-      <button @click="upload" class="button">Upload Convict Picture</button>
     </div>
 
     <div style="flex-basis: 100%">
