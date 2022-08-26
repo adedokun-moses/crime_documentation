@@ -131,7 +131,9 @@ import Nav from "../components/nav.vue";
 import Intro from "../components/intro.vue";
 import Footer from "../components/footer.vue";
 import state from "/states.json";
-import axios from "axios";
+//import axios from "axios";
+import convictColRef from "../firebase";
+import { getDoc, doc, setDoc } from "firebase/firestore";
 
 export default {
   components: { Nav, Intro, Footer },
@@ -139,6 +141,8 @@ export default {
     return {
       title: "Convicted Criminals ",
       states: state,
+      selectedData: {},
+      detailsId: null,
       datas: [],
       previewImage: null,
       id: this.$route.params.id,
@@ -150,16 +154,16 @@ export default {
       gender: "",
       marital_status: "",
       date_arrested: "",
-      sentencedate: "",
       release_date: "",
       prison: "",
-      sentence: "",
       date_charged: "",
+      sentence: "",
       dateArrested: "",
       crime: "",
       convicted_date: "",
       court: "",
       lawyer: "",
+      detRef: null,
     };
   },
 
@@ -179,7 +183,54 @@ export default {
         this.$emit("input", file[0]);
       }
     },
-    async fetchDetails() {
+    async getdetails() {
+      let detailsRef = doc(convictColRef, this.detailsId);
+      this.detRef = detailsRef;
+      let details = await getDoc(this.detRef);
+      let detailsData = details.data();
+      this.fname = detailsData.fname;
+      this.mname = detailsData.mname;
+      this.sname = detailsData.sname;
+      this.address = detailsData.address;
+      this.gender = detailsData.gender;
+      this.state = detailsData.state;
+      this.date_charged = detailsData.date_charged;
+      this.marital_status = detailsData.marital_status;
+      this.date_arrested = detailsData.date_arrested;
+      this.release_date = detailsData.release_date;
+      this.prison = detailsData.prison;
+      this.sentence = detailsData.sentence;
+      this.convicted_date = detailsData.convicted_date;
+      this.crime = detailsData.crime;
+      this.court = detailsData.court;
+      this.lawyer = detailsData.lawyer;
+      this.previewImage = detailsData.previewImage;
+    },
+
+    async updateDetails() {
+      await setDoc(this.detRef, {
+        fname: this.fname,
+        mname: this.mname,
+        sname: this.sname,
+        address: this.address,
+        gender: this.gender,
+        state: this.state,
+        date_charged: this.date_charged,
+        marital_status: this.marital_status,
+        date_arrested: this.date_arrested,
+        release_date: this.release_date,
+        prison: this.prison,
+        sentence: this.sentence,
+        convicted_date: this.convicted_date,
+        crime: this.crime,
+        court: this.court,
+        lawyer: this.lawyer,
+        previewImage: this.previewImage,
+      });
+      alert (`this ${this.detailsId}  has been updated `);
+      this.$router.push('/tracking')
+    },
+    /*     async fetchDetails() {
       try {
         const dtres = await axios.get(`http://localhost:3000/details`);
         //this.datas = dtres.data;
@@ -243,18 +294,20 @@ export default {
         })
         .catch((err) => console.log(err));
       // this.$router.go('/')
-    },
-      homebtn() {
+    }, */
+    homebtn() {
       this.$router.push("/tracking");
     },
   },
 
   mounted() {
-    this.fetchDetails();
+    let detailsId = this.$route.params.id;
+    this.detailsId = detailsId;
+    this.getdetails();
+    //  this.fetchDetails();
     // this.updateDetails();
     /*  this.singleDet() */
   },
- 
 };
 </script>
 

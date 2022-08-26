@@ -7,7 +7,6 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "start": "node server.js"
-  
   },
   "dependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
@@ -16,6 +15,7 @@
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
     "faunadb": "^4.6.0",
+    "firebase": "^9.9.3",
     "firestore-export-import": "^1.2.0",
     "json-server": "^0.4.2",
     "vue": "^3.2.13",

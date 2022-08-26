@@ -24,10 +24,10 @@
     <table>
       <thead>
         <th>Select</th>
-        <th>Case Number</th>
         <th>First Name</th>
         <th>Surname</th>
         <th>State</th>
+        <th>Crime Committed</th>
         <th>Date Arrested</th>
         <th>Date Charged</th>
         <th>Convicted Date</th>
@@ -38,13 +38,9 @@
         <th>Prison</th> -->
       </thead>
 
-      <tbody v-for="data in filteredList()" :key="data.id">
+      <tbody v-for="data in datas" :key="data.id">
         <td>
           <input type="checkbox" :value="data.id" @change="opendet($event)" />
-        </td>
-
-        <td>
-          {{ data.id }}
         </td>
 
         <td>{{ data.fname }}</td>
@@ -52,11 +48,11 @@
         <td>{{ data.sname }}</td>
 
         <td>{{ data.state }}</td>
-
+        <td>{{data.crime}}</td>
         <td>{{ data.date_arrested }}</td>
         <td>{{ data.date_charged }}</td>
         <td>{{ data.convicted_date }}</td>
-        <td><Modal/></td>
+        <td><Modal /></td>
       </tbody>
     </table>
   </div>
@@ -71,8 +67,10 @@ import Nav from "../components/nav.vue";
 import Intro from "../components/intro.vue";
 import Footer from "../components/footer.vue";
 import Modal from "../components/modal.vue";
+import convictColRef from "../firebase";
+import { getDocs, doc, deleteDoc } from "firebase/firestore";
 //import data from "/data.json";
-import axios from "axios";
+//import axios from "axios";
 export default {
   components: { Nav, Intro, Footer, Modal },
   data() {
@@ -82,24 +80,28 @@ export default {
       checkedresult: "",
       search: "",
       title: "Full List Of Convicts ",
+      selectedDet: null
 
       // checked_id: ''
     };
   },
 
-  async mounted() {
-    try {
-      const res = await axios.get(` http://localhost:3000/details`);
-      this.datas = res.data;
-    } catch (error) {
-      console.log(error);
-    }
+  mounted() {
+    this.fetchDetails();
   },
-
   methods: {
-    //opendet(id) {
-    // alert(id);
-    // },
+
+    async fetchDetails() {
+      let detailssnapShot = await getDocs(convictColRef);
+      let datas = [];
+      detailssnapShot.forEach(data =>{
+        let Checkeddata = data.data();
+       Checkeddata.id = data.id
+        datas.push(Checkeddata)
+      });
+      console.log(datas)
+      this.datas = datas;
+    },
 
     opendet(e) {
       // console.log()
@@ -129,26 +131,20 @@ export default {
       }
     },
 
-    delete_criminal(checkedresult) {
+   async delete_criminal(checkedresult) {
       if (this.checkedresult == "") {
         alert("You Need To Select A record");
         console.log(checkedresult);
       } else {
-        axios.delete(`http://localhost:3000/details/${this.checkedresult}`);
-        const index = (this.datas = this.datas.filter(
-          (data) => data.checkedresult !== this.checkedresult
-        ));
-        if (~index)
-          // if the post exists in array
-          this.datas.splice(index, 1); //delete the post
-        //  this.delete_criminal()
-        swal("Details Deleted!", "Click Ok to continue!", "success", {
-          button: "Ok!",
-        });
+          let detailsRef = doc(convictColRef, checkedresult);
+          await deleteDoc(detailsRef);
+          alert("Details Deleted")
+          this.$router.go()
+
       }
     },
 
-    filteredList() {
+/*     filteredList() {
       if (this.search) {
         return this.datas.filter((data) => {
           return data.checkedresult
@@ -158,10 +154,8 @@ export default {
         });
       } else {
         return this.datas;
-         
       }
-    
-    },
+    }, */
   },
 };
 </script>

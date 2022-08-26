@@ -129,7 +129,9 @@ import Nav from "../components/nav.vue";
 import Intro from "../components/intro.vue";
 import Footer from "../components/footer.vue";
 import state from "/states.json";
-import axios from "axios";
+//import axios from "axios";
+import convictColRef from "../firebase";
+import { addDoc } from "firebase/firestore";
 
 export default {
   components: { Nav, Intro, Footer },
@@ -148,19 +150,15 @@ export default {
       gender: "",
       marital_status: "",
       date_arrested: "",
-      sentencedate: "",
       release_date: "",
       prison: "",
       date_charged: "",
-      //  cellNo: "",
       sentence: "",
       dateArrested: "",
       crime: "",
       convicted_date: "",
-      // dateCharged: "",
       court: "",
       lawyer: "",
-      // image=""
     };
   },
 
@@ -181,30 +179,25 @@ export default {
       }
     },
 
-    /* onFileSelected(event) {
-      this.selectedFile = event.target.files[0];
-      
-    }, */
-
-    /*  upload() {
-      const fd = new FormData();
-
-      fd.append("image", this.selectedFile),
-        axios.post("http://localhost:3000/details", fd).then((res) => {
-          console.log(res);
-        });
-      alert("Picture Uploaded, Kindly fill other details and proceed");
-    }, */
-
     async addItem() {
+      console.log("creating document");
       if (this.fname == "" || this.mname == "" || this.sname == "") {
+        alert("All Field Must Be Filled");
+      } else {
+        const addedDoc = await addDoc(convictColRef, this.$data);
+        alert("Details Added Sucessfully!")
+        this.$router.push("/tracking")
+        console.log(addedDoc);
+      }
+
+      /*   if (this.fname == "" || this.mname == "" || this.sname == "") {
         alert("All Field Must Be Filled");
       } else {
         const res = await axios
           .post(`http://localhost:3000/details`, {
             fname: this.fname,
             mname: this.mname,
-            sname: this.sname,
+            sname: this.sname, 
             address: this.address,
             state: this.state,
             gender: this.gender,
@@ -228,9 +221,10 @@ export default {
           .catch((err) => console.log(err));
         alert("details addedd");
         //window.location.reload();
-      }
+      } */
     },
     homebtn() {
+      //console.log("home")
       this.$router.push("/dashboard");
     },
   },
