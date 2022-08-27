@@ -4,8 +4,8 @@
       <div class="details" style="flex-basis: 40%">
         <img src="../assets/policebg.png" alt="" />
         <!--   <img src="../assets/policebg.png" alt="" /> -->
-        <h5>Nigeria Police Force</h5>
-        <p>Police is your friend</p>
+      <!--   <h5>Nigeria Police Force</h5>
+        <p>Police is your friend</p> -->
       </div>
       <div class="details2" style="flex-basis: 100%">
         <form>
@@ -82,8 +82,10 @@ p {
   font-size: 20px;
 }
 .details img {
-  width: 100%;
-  margin-top: 120px;
+
+  height: 200px;
+  margin-top: 100px;
+
 }
 
 .details2 form {

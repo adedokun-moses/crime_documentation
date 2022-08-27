@@ -58,6 +58,7 @@ footer h5 {
   display: block;
   text-align: center;
   padding: 10px;
+  color: white;
 }
 .socialmedia {
   width: 30%;
@@ -77,6 +78,7 @@ footer h5 {
 .details {
   display: flex;
   margin: 0px 20px;
+  color: white;
 }
 
 .details > div {
@@ -103,7 +105,7 @@ footer h5 {
   list-style: none;
   margin: 10px 20px;
   padding: 0px;
-  color: white;
+
 }
 .links li {
   border-bottom: 1px dotted rgb(150, 110, 110);

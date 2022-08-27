@@ -1,11 +1,9 @@
 <template>
   <body>
     <div class="formcontainer">
-      <div class="details" style="flex-basis: 40%">
+      <div class="details" style="flex-basis: 30%">
         <img src="../assets/policebg.png" alt="" />
-        <!--   <img src="../assets/policebg.png" alt="" /> -->
-        <h5>Nigeria Police Force</h5>
-        <p>Police is your friend</p>
+          
       </div>
       <div class="details2" style="flex-basis: 100%">
         <form  >
@@ -79,8 +77,6 @@ export default {
 body {
   padding: 3px;
   background-image: linear-gradient(to right, rgb(106, 122, 218), white);
- 
-
 }
 
 .formcontainer {
@@ -100,6 +96,7 @@ body {
   background: rgb(112, 112, 247);
   padding: 0px;
   margin: 0px;
+
 }
 
 .details h5,
@@ -114,8 +111,10 @@ p {
   font-size: 20px;
 }
 .details img {
-  width: 100%;
-  margin-top: 120px;
+
+  height: 200px;
+  margin-top: 100px;
+
 }
 
 .details2 form {
