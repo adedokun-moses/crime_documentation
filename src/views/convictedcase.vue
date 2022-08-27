@@ -294,7 +294,7 @@ form {
   margin: 10px 5px;
 }
 .formgroup input {
-  width: 30%;
+  width: 31%;
   margin: 10px 5px;
   padding: 13px 5px;
   outline: none;
@@ -326,7 +326,7 @@ form {
   display: inline-block;
 }
 .group select {
-  padding: 13px 92px 13px 77px;
+  padding: 13px 92px 13px 60px;
   margin: 10px 5px ;
   outline: none;
   background: none;
