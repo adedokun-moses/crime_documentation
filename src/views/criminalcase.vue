@@ -3,7 +3,7 @@
   <div>
     <Intro :title="title" />
   </div>
-  <form>
+  <form  @submit.prevent="saveStatement()">
     <h4>Statement Should Be Imput Accordingly</h4>
     <div class="formgroup">
       <label for="witness"> Suspect Name</label><br />
@@ -44,7 +44,7 @@
       <textarea name="" id="" cols="40" rows="10"></textarea>
     </div>
     <div class="submitbtn">
-      <button @click.prevent="submit()" style="background: green">
+      <button style="background: green">
         Submit Statement
       </button>
       <button style="background: red" @click="homebtn()">
@@ -67,16 +67,17 @@ export default {
       title: "Suspect Statement ",
       fname: "",
       mname: "",
-      lname: "",
+      sname: "",
     };
   },
 
   methods: {
     homebtn() {
+
       this.$router.push("/dashboard");
     },
-    submit() {
-      if (fname == "" || mname == "" || lname == "") {
+    saveStatement() {
+      if (this.fname == "" || this.mname == "" || this.sname == "") {
         alert("All Input Must Be Filled");
       } else {
         alert("Suspect Statement Saved");
@@ -87,89 +88,5 @@ export default {
 };
 </script>
 <style scoped>
-form {
-  width: 70%;
-  margin: 20px auto;
-  background: white;
-  padding: 20px 10px;
-  border-radius: 10px;
-}
-form h4, p{
-  text-align: center;
-  font-weight: bolder;
-  font-size: 20px;
-}
-.formgroup input {
-  width: 32%;
-  margin: 10px 5px;
-  padding: 13px 5px;
-  outline: none;
-}
-.formgroup label{
-  margin: 0px 8px;
-}
-.statement label{
-  margin: 0px 8px;
-}
-.statement input {
-  width: 98%;
-  margin: 10px 5px;
-  padding: 13px 5px;
-  outline: none;
-}
-
-.statement textarea {
-  width: 98%;
-  margin: 10px 5px;
-  padding: 13px 5px;
-  outline: none;
-}
-.submitbtn button {
-  margin: 10px 7px;
-  padding: 20px 15px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  width: 48.3%;
-}
-
-@media only screen and (max-width: 600px) {
-  form {
-    width: 100%;
-    margin: 20px auto;
-  }
-  .formgroup input {
-    width: 100%;
-    margin: 10px 0px;
-    padding: 13px 5px;
-    outline: none;
-  }
-  .statement input {
-    width: 100%;
-    margin: 10px 0px;
-    padding: 13px 5px;
-    outline: none;
-  }
-
-  .statement textarea {
-    width: 100%;
-    margin: 10px 0px;
-    padding: 13px 5px;
-    outline: none;
-  }
-  .submitbtn button {
-    margin: 5px 1px;
-    padding: 20px 25.6px;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    width: 100%;
-  }
-}
+@import "../../public/cssfolder/criminalcss.css";
 </style>

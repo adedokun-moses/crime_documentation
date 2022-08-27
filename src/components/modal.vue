@@ -2,7 +2,7 @@
   <button @click="openModal()" id="myBtn">View Full Details</button>
 
   <!-- The Modal -->
-  <div id="myModal" class="modal">
+  <div id="myModal" class="modal" >
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -48,11 +48,15 @@
 </template>
 
 <script>
-import axios from "axios";
+import convictColRef from "../firebase";
+import { getDoc, doc } from "firebase/firestore";
 export default {
-  data() {
+   data() {
     return {
+      selectedData: {},
+      detailsId: null,
       datas: [],
+      previewImage: null,
       id: this.$route.params.id,
       fname: "",
       mname: "",
@@ -62,16 +66,16 @@ export default {
       gender: "",
       marital_status: "",
       date_arrested: "",
-      sentencedate: "",
       release_date: "",
       prison: "",
-      sentence: "",
       date_charged: "",
+      sentence: "",
       dateArrested: "",
       crime: "",
       convicted_date: "",
       court: "",
       lawyer: "",
+      detRef: null,
     };
   },
 
@@ -101,54 +105,46 @@ export default {
       window.onclick = function (event) {
         if (event.target == modal) {
           modal.style.display = "none";
-       
         }
       };
     },
 
-  /*   async fetchDetails() {
-      try {
-        const dtres = await axios.get(`http://localhost:3000/details`);
-        //this.datas = dtres.data;
-        dtres.data.forEach((res) => {
-          if (res.id == this.id) {
-            this.fname = res.fname;
-            this.mname = res.mname;
-            this.sname = res.sname;
-            this.address = res.address;
-            this.gender = res.gender;
-            this.state = res.state;
-            this.date_charged = res.date_charged;
-            this.marital_status = res.marital_status;
-            this.date_arrested = res.date_arrested;
-            this.release_date = res.release_date;
-            this.prison = res.prison;
-            this.sentence = res.sentence;
-            this.convicted_date = res.convicted_date;
-            this.crime = res.crime;
-            this.court = res.court;
-            this.lawyer = res.lawyer;
-            this.previewImage = res.image;
-
-            // console.log(res.fname);
-          }
-        });
-
-        //console.log(res.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }, */
+    async getdetails() {
+      let detailsRef = doc(convictColRef, this.detailsId);
+      this.detRef = detailsRef;
+      let details = await getDoc(this.detRef);
+      let detailsData = details.data();
+      this.fname = detailsData.fname;
+      this.mname = detailsData.mname;
+      this.sname = detailsData.sname;
+      this.address = detailsData.address;
+      this.gender = detailsData.gender;
+      this.state = detailsData.state;
+      this.date_charged = detailsData.date_charged;
+      this.marital_status = detailsData.marital_status;
+      this.date_arrested = detailsData.date_arrested;
+      this.release_date = detailsData.release_date;
+      this.prison = detailsData.prison;
+      this.sentence = detailsData.sentence;
+      this.convicted_date = detailsData.convicted_date;
+      this.crime = detailsData.crime;
+      this.court = detailsData.court;
+      this.lawyer = detailsData.lawyer;
+      this.previewImage = detailsData.previewImage;
+    }, 
   },
 
-  async mounted() {
+  mounted(){
+    this.getdetails() ;
+  }
+  /*  async mounted() {
     try {
       const res = await axios.get(` http://localhost:3000/details`);
       this.datas = res.data;
     } catch (error) {
       console.log(error);
     }
-  },
+  }, */
 };
 </script>
 
@@ -207,7 +203,6 @@ button {
   font-size: 12px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
-
 }
 
 @media only screen and (max-width: 600px) {

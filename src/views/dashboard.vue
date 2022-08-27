@@ -26,11 +26,11 @@
       </div>
       <div>
         <h4>
-         1.  It is with total appreciation of Almighty Allah (SWT), the Most
+          <p>1.  It is with total appreciation of Almighty Allah (SWT), the Most
           Beneficent, that I address you all on this day which marks the formal
           transfer of leadership of the Nigeria Police Force from the out-going
           20th indigenous Inspector General of Police, IGP Mohammed Abubakar
-          Adamu, NPM, mni to my humble self. <br />
+          Adamu, NPM, mni to my humble self.</p> 
           <p>
             2. Being appointed to head the largest Police Force in Africa both
             in terms of personnel profile and operational jurisdiction is to me,

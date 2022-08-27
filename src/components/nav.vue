@@ -85,7 +85,7 @@ export default {
 .mobile {
   display: none;
 }
-nav {
+.desktop {
   height: 70px;
   display: flex;
   align-items: center;
@@ -95,12 +95,13 @@ nav {
   background: white;
   z-index: 1;
   width: 100%;
+  top: 0;
 }
 nav > div {
   width: 100%;
 }
 nav img {
-  width: 15%;
+  width: 10%;
 }
 nav a {
   padding: 0px 10px;
@@ -115,7 +116,7 @@ nav a {
 
 .logo h5 {
   display: inline-block;
-  font-size: 23px;
+  font-size: 15px;
   text-align: center;
 }
 
@@ -167,56 +168,60 @@ nav a {
   }
   .mobile {
     display: block;
+  }
+
+  .nav_links {
     position: fixed;
     background: white;
     width: 100%;
     z-index: 1;
-    height: 80px;
+    height: 70px;
     bottom: 0;
-    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    color: red;
   }
+ .nav_links a:hover, a:focus {
+  background: darkblue;
+  padding: 10px 8px;
+  border-radius: 3px;
+  margin: 0px 5px;
+  color: white;
+}
 
+.log__:hover {
+  background: darkblue;
+  padding: 10px 13px;
+  border-radius: 3px;
+  margin: 0px 5px;
+  color: white;
+}
 
   .logo {
     display: none;
   }
-  .nav {
-    display: flex;
-    align-items: center;
- 
-    
-
-  }
 
   .nav_links a {
-    padding: 0px 2px;
+    padding: 0px 12px;
     border-radius: 0px;
-    margin: 10px 4px;
- 
+    margin: 0px 0px;
   }
 
-  .nav_links a:hover {
+  /*   .nav_links a:hover {
     background: none;
     padding: 0px 2px;
     border-radius: 3px;
     margin: 10px 4px;
-    color: black;
+    color: red;
   }
-/*    .nav_links a:focus {
-   background: black;
-    padding: 0px 2px;
-    border-radius: 3px;
-    margin: 10px 4px;
-    color: white;
-}
-  */
+ */
   .log {
     text-align: left;
     display: flex;
   }
 
   .log__:hover {
-    background: black;
+    background: red;
     padding: 8px 3px;
     border-radius: 3px;
     margin: 0px 5px;
@@ -224,10 +229,14 @@ nav a {
   }
   .log_ {
     background: none;
-    padding: 8px 13px;
+    padding: 8px 3px;
     border-radius: 3px;
     margin: 0px 0px;
     color: black;
+  }
+
+  p {
+    font-size: 13px;
   }
 }
 

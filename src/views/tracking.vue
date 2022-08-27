@@ -52,7 +52,7 @@
         <td>{{ data.date_arrested }}</td>
         <td>{{ data.date_charged }}</td>
         <td>{{ data.convicted_date }}</td>
-        <td><Modal /></td>
+        <td><Modal/></td>
       </tbody>
     </table>
   </div>
@@ -91,6 +91,7 @@ export default {
   },
   methods: {
 
+
     async fetchDetails() {
       let detailssnapShot = await getDocs(convictColRef);
       let datas = [];
@@ -118,10 +119,10 @@ export default {
 
     update(checkedresult) {
       if (this.checkedresult == "") {
-        alert("You Need To Select A record");
-        // swal("Error!", "You Need To Select A record", "error");
+        //alert("You Need To Select A record");
+        swal("Error!", "You Need To Select A record", "error");
       } else {
-        alert("welcome");
+       // alert("welcome");
         console.log(checkedresult);
         this.$router.push({
           name: "trackingdet",
@@ -133,12 +134,12 @@ export default {
 
    async delete_criminal(checkedresult) {
       if (this.checkedresult == "") {
-        alert("You Need To Select A record");
+        swal("Error!", "You Need To Select A record", "error");
         console.log(checkedresult);
       } else {
           let detailsRef = doc(convictColRef, checkedresult);
           await deleteDoc(detailsRef);
-          alert("Details Deleted")
+          swal("Good job!", "Record has been deleted!!", "success");
           this.$router.go()
 
       }

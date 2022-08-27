@@ -76,24 +76,24 @@
         </div>
 
         <div class="formgroup__">
-          <div class="group_">
+          <div class="group__">
             <label for="witness">Crime Committed</label><br />
             <input type="text" v-model="crime" />
           </div>
 
-          <div class="group_">
+          <div class="group__">
             <label for="witness">Court </label><br />
             <input type="text" v-model="court" />
           </div>
         </div>
 
         <div class="formgroup__">
-          <div class="group_">
+          <div class="group__">
             <label for="witness">Sentence Received</label><br />
             <input type="text" v-model="sentence" />
           </div>
 
-          <div class="group_">
+          <div class="group__">
             <label for="witness">Prison </label><br />
             <input type="text" v-model="prison" />
           </div>
@@ -303,14 +303,14 @@ form {
   margin: 10px 5px;
 }
 .statement input {
-  width: 93%;
+  width: 96%;
   margin: 10px 5px;
   padding: 13px 5px;
   outline: none;
 }
 
 .submitbtn button {
-  width: 46%;
+  width: 48.5%;
   display: inline-block;
   margin: 20px 0px 10px 6px;
   padding: 20px 0px;
@@ -321,27 +321,31 @@ form {
   font-weight: bold;
   cursor: pointer;
 }
+
 .group {
   display: inline-block;
 }
 .group select {
-  padding: 13px 74px;
-  margin: 10px 5px;
+  padding: 13px 92px 13px 77px;
+  margin: 10px 5px ;
   outline: none;
+  background: none;
+  border: 1px solid;
+  width: 95%;
 }
 
 .formgroup_ {
   display: flex;
 }
 .formgroup_ > div {
-  margin: 7px 5px;
-  width: 30.3%;
+  margin: 7px 5px 10px;
+  width: 100%;
 }
 
 .group_ input {
-  width: 100%;
+  width: 95%;
   margin: 10px 0px;
-  padding: 13px 10px;
+  padding: 13px 0px;
   outline: none;
 }
 .formgroup__ {
@@ -349,7 +353,13 @@ form {
 }
 .formgroup__ > div {
   margin: 7px 5px;
-  width: 46%;
+  width: 100%;
+}
+.group__ input {
+  width: 97%;
+  margin: 10px 0px;
+  padding: 13px 0px;
+  outline: none;
 }
 
 .button {
@@ -370,6 +380,7 @@ form {
     flex-direction: column;
     width: 90%;
     margin: auto;
+   
   }
   .imagelog {
     margin: 10px auto;
@@ -393,6 +404,10 @@ form {
     outline: none;
     border: none;
   }
+  form {
+  width: 100%;
+  margin: 0px;
+}
 
   .formgroup_ {
     display: block;
@@ -400,6 +415,7 @@ form {
   .formgroup_ > div {
     margin: 7px 5px;
     width: 100%;
+
   }
 
   .formgroup input {
@@ -411,7 +427,7 @@ form {
 
   .group select {
     padding: 13px 93px;
-    margin: 0px 0px;
+    margin: 10px 6px;
     outline: none;
     width: 100%;
   }

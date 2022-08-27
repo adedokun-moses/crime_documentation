@@ -1,0 +1,212 @@
+
+.convicteddet {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+  }
+  .logo {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .logo img {
+    width: 20%;
+  }
+  .imagelog {
+    margin: 30px;
+    border-radius: 5px;
+    height: 320px;
+    width: 30%;
+    box-shadow: 3px 3px 3px 5px grey;
+  }
+  .imagelog input {
+    background: grey;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+  }
+  .imagelog h1 {
+    font-size: 15px;
+    text-align: center;
+  }
+  .imagePreviewWrapper {
+    width: 100%;
+    height: 320px;
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: 0 auto 30px;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  /* .imagepreview {
+    width: 250px;
+    height: 250px;
+    display: block;
+    cursor: pointer;
+    margin: 0 auto 30px;
+    background-size: cover;
+    background-position: center center;
+  } */
+  form {
+    width: 90%;
+    margin: 20px auto;
+  }
+  .formgroup label {
+    margin: 10px 5px;
+  }
+  .formgroup input {
+    width: 30%;
+    margin: 10px 5px;
+    padding: 13px 5px;
+    outline: none;
+  }
+  .statement label {
+    margin: 10px 5px;
+  }
+  .statement input {
+    width: 93%;
+    margin: 10px 5px;
+    padding: 13px 5px;
+    outline: none;
+  }
+  
+  .submitbtn button {
+    width: 44%;
+    display: inline-block;
+    margin: 20px 30px 10px 7px;
+    padding: 20px 0px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .group {
+    display: inline-block;
+  }
+  .group select {
+    padding: 13px 73px;
+    margin: 10px 5px;
+    outline: none;
+  }
+  
+  .formgroup_ {
+    display: flex;
+  }
+  .formgroup_ > div {
+    margin: 7px 5px;
+    width: 30.3%;
+  }
+  
+  .group_ input {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 13px 10px;
+    outline: none;
+  }
+  .formgroup__ {
+    display: flex;
+  }
+  .formgroup__ > div {
+    margin: 7px 5px;
+    width: 46%;
+  }
+  
+  .button {
+    background: green;
+    width: 100%;
+    margin: 20px auto;
+    padding: 15px;
+    outline: none;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  @media only screen and (max-width: 600px) {
+    .convicteddet {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: auto;
+    }
+    .imagelog {
+      margin: 10px auto;
+      border-radius: 5px;
+      height: 300px;
+      width: 90%;
+      box-shadow: 3px 3px 3px 5px grey;
+    }
+    .imagelog input {
+      width: 95%;
+      margin: 10px;
+      padding: 10px 5px;
+    }
+    .imagelog button {
+      background: green;
+      width: 80%;
+      display: block;
+      padding: 10px;
+      margin: 5px auto;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+    }
+    .formgroup_ {
+      display: block;
+    }
+    .formgroup_ > div {
+      margin: 7px 5px;
+      width: 100%;
+    }
+    .formgroup__ {
+      display: block;
+    }
+  
+    .formgroup__ > div {
+      width: 100%;
+    }
+  
+    .formgroup input {
+      width: 100%;
+    }
+    .group_ input {
+      width: 100%;
+    }
+    .group select {
+      padding: 13px 93px;
+      margin: 0px 0px;
+      outline: none;
+      width: 100%;
+    }
+    .group {
+      display: block;
+      width: 100%;
+    }
+    .formgroup_ {
+      display: block;
+    }
+    .statement input {
+      width: 100%;
+    }
+    .submitbtn button {
+      width: 100%;
+      display: inline-block;
+      margin: 20px 30px 10px 0px;
+      padding: 20px 0px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
