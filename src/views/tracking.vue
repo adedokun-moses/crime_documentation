@@ -16,7 +16,7 @@
 
     <div class="input">
       <i class="fa fa-search"></i>
-      <input type="text" placeholder=" CASE NO" v-model="search" />
+      <input type="text" placeholder="Convict First Name" v-model="search" />
     </div>
   </div>
 
@@ -31,28 +31,24 @@
         <th>Date Arrested</th>
         <th>Date Charged</th>
         <th>Convicted Date</th>
-        <!--     <th>Lawyer Name</th>
-        <th>Court</th>
-        <th>Crime Committed</th>
-        <th>Sentence Received</th>
-        <th>Prison</th> -->
       </thead>
 
-      <tbody v-for="data in datas" :key="data.id">
+      <tbody v-for="data in filteredList()" :key="data.id">
         <td>
           <input type="checkbox" :value="data.id" @change="opendet($event)" />
         </td>
 
         <td>{{ data.fname }}</td>
-
         <td>{{ data.sname }}</td>
-
         <td>{{ data.state }}</td>
-        <td>{{data.crime}}</td>
+        <td>{{ data.crime }}</td>
         <td>{{ data.date_arrested }}</td>
         <td>{{ data.date_charged }}</td>
         <td>{{ data.convicted_date }}</td>
-        <td><Modal/></td>
+        <td>
+          <Modal :data="data" :key="data.id" />
+        </td>
+        <!--   <td><Modal/></td> -->
       </tbody>
     </table>
   </div>
@@ -75,12 +71,12 @@ export default {
   components: { Nav, Intro, Footer, Modal },
   data() {
     return {
-      title: "Crimnal Records ",
+      title: "Convicted Details ",
       datas: [],
       checkedresult: "",
-      search: "",
-      title: "Full List Of Convicts ",
-      selectedDet: null
+      search: null,
+      selectedDet: null,
+      clickeddet: "",
 
       // checked_id: ''
     };
@@ -89,18 +85,17 @@ export default {
   mounted() {
     this.fetchDetails();
   },
+
   methods: {
-
-
     async fetchDetails() {
       let detailssnapShot = await getDocs(convictColRef);
       let datas = [];
-      detailssnapShot.forEach(data =>{
+      detailssnapShot.forEach((data) => {
         let Checkeddata = data.data();
-       Checkeddata.id = data.id
-        datas.push(Checkeddata)
+        Checkeddata.id = data.id;
+        datas.push(Checkeddata);
       });
-      console.log(datas)
+      console.log(datas);
       this.datas = datas;
     },
 
@@ -122,7 +117,7 @@ export default {
         //alert("You Need To Select A record");
         swal("Error!", "You Need To Select A record", "error");
       } else {
-       // alert("welcome");
+        // alert("welcome");
         console.log(checkedresult);
         this.$router.push({
           name: "trackingdet",
@@ -132,31 +127,30 @@ export default {
       }
     },
 
-   async delete_criminal(checkedresult) {
+    async delete_criminal(checkedresult) {
       if (this.checkedresult == "") {
         swal("Error!", "You Need To Select A record", "error");
         console.log(checkedresult);
       } else {
-          let detailsRef = doc(convictColRef, checkedresult);
-          await deleteDoc(detailsRef);
-          swal("Good job!", "Record has been deleted!!", "success");
-          this.$router.go()
-
+        let detailsRef = doc(convictColRef, checkedresult);
+        await deleteDoc(detailsRef);
+        swal("Good job!", "Record has been deleted!!", "success");
+        this.$router.go();
       }
     },
 
-/*     filteredList() {
+    filteredList() {
       if (this.search) {
-        return this.datas.filter((data) => {
-          return data.checkedresult
+        return this.datas.filter((item) => {
+          return this.search
             .toLowerCase()
-            .split("")
-            .every((v) => data.name.toLowerCase().includes(v));
+            .split(" ")
+            .every((v) => item.fname.toLowerCase().includes(v));
         });
       } else {
         return this.datas;
       }
-    }, */
+    },
   },
 };
 </script>

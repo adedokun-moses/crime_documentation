@@ -1,57 +1,131 @@
 <template>
-  <button @click="openModal()" id="myBtn">View Full Details</button>
-
+  <button @click="openModal(data.id)" :id="'myBtn' + data.id">
+    View Full Details
+  </button>
   <!-- The Modal -->
-  <div id="myModal" class="modal" >
+  <div :id="'myModal' + data.id" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-      <span class="close">&times;</span>
-      <table>
-        <thead>
-          <th>First Name</th>
-          <th>Middle Name</th>
-          <th>Surname</th>
-          <th>Gender</th>
-          <th>Marial Status</th>
-          <th>State</th>
-          <th>Address</th>
-          <th>Date Arrested</th>
-          <th>Date Charged</th>
-          <th>Convicted Date</th>
-          <th>Lawyer Name</th>
-          <th>Court</th>
-          <th>Crime Committed</th>
-          <th>Sentence Received</th>
-          <th>Prison</th>
-        </thead>
+      <span class="close" @click="closeModal(data.id)">&times;</span>
+      <h5>Convict Full Details</h5>
+      <div class="details" >
+        <div>
+          <h4>First Name:</h4>
+        </div>
+        <div>
+          <h4>{{ data.fname }}</h4>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <h4>Middle Name:</h4>
+        </div>
+        <div>
+          <h4>{{ data.mname }}</h4>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <h4>Surname:</h4>
+        </div>
+        <div>
+          <h4>{{ data.sname }}</h4>
+        </div>
+      </div>
 
-        <tbody v-for="data in datas" :key="data.id">
-          <td>{{ data.fname }}</td>
-          <td>{{ data.mname }}</td>
-          <td>{{ data.sname }}</td>
-          <td>{{ data.gender }}</td>
-          <td>{{ data.marital_status }}</td>
-          <td>{{ data.state }}</td>
-          <td>{{ data.address }}</td>
-          <td>{{ data.date_arrested }}</td>
-          <td>{{ data.date_charged }}</td>
-          <td>{{ data.convicted_date }}</td>
-          <td>{{ data.lawyer }}</td>
-          <td>{{ data.court }}</td>
-          <td>{{ data.crime }}</td>
-          <td>{{ data.sentence }}</td>
-          <td>{{ data.prison }}</td>
-        </tbody>
-      </table>
+      <div class="details">
+        <div>
+          <h4>State:</h4>
+        </div>
+        <div>
+          <h4>{{ data.state }}</h4>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <h4>Address:</h4>
+        </div>
+        <div>
+          <h4>{{ data.address }}</h4>
+        </div>
+      </div>
+
+      <div class="details">
+        <div>
+          <h4>Gender:</h4>
+        </div>
+        <div>
+          <h4>{{ data.gender }}</h4>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <h4>Crime Committed:</h4>
+        </div>
+        <div>
+          <h4>{{ data.crime }}</h4>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <h4>Date Arrested:</h4>
+        </div>
+        <div>
+          <h4>{{ data.date_arrested }}</h4>
+        </div>
+      </div>
+
+      <div class="details">
+        <div>
+          <h4>Date Charged:</h4>
+        </div>
+        <div>
+          <h4>{{ data.date_charged }}</h4>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <h4>Convivted Date:</h4>
+        </div>
+        <div>
+          <h4>{{ data.convicted_date }}</h4>
+        </div>
+      </div>
+
+      <div class="details">
+        <div>
+          <h4>Court:</h4>
+        </div>
+        <div>
+          <h4>{{ data.court }}</h4>
+        </div>
+      </div>
+
+      <div class="details">
+        <div>
+          <h4>Prison Held:</h4>
+        </div>
+        <div>
+          <h4>{{ data.prison }}</h4>
+        </div>
+      </div>
+      <div class="details">
+        <div>
+          <h4>Judge Name:</h4>
+        </div>
+        <div>
+          <h4>{{ data.lawyer }}</h4>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import convictColRef from "../firebase";
-import { getDoc, doc } from "firebase/firestore";
+//import convictColRef from "../firebase";
+//import { getDoc, doc } from "firebase/firestore";
 export default {
-   data() {
+  data() {
     return {
       selectedData: {},
       detailsId: null,
@@ -78,15 +152,21 @@ export default {
       detRef: null,
     };
   },
+  props: ["data"],
 
   methods: {
-    openModal() {
+    closeModal(id) {
+      // Get the modal
+      var modal = document.getElementById("myModal" + id);
+      modal.style.display = "none";
+    },
+    openModal(id) {
       //alert("working");
       // Get the modal
-      var modal = document.getElementById("myModal");
+      var modal = document.getElementById("myModal" + id);
 
       // Get the button that opens the modal
-      var btn = document.getElementById("myBtn");
+      var btn = document.getElementById("myBtn" + id);
 
       // Get the <span> element that closes the modal
       var span = document.getElementsByClassName("close")[0];
@@ -108,43 +188,7 @@ export default {
         }
       };
     },
-
-    async getdetails() {
-      let detailsRef = doc(convictColRef, this.detailsId);
-      this.detRef = detailsRef;
-      let details = await getDoc(this.detRef);
-      let detailsData = details.data();
-      this.fname = detailsData.fname;
-      this.mname = detailsData.mname;
-      this.sname = detailsData.sname;
-      this.address = detailsData.address;
-      this.gender = detailsData.gender;
-      this.state = detailsData.state;
-      this.date_charged = detailsData.date_charged;
-      this.marital_status = detailsData.marital_status;
-      this.date_arrested = detailsData.date_arrested;
-      this.release_date = detailsData.release_date;
-      this.prison = detailsData.prison;
-      this.sentence = detailsData.sentence;
-      this.convicted_date = detailsData.convicted_date;
-      this.crime = detailsData.crime;
-      this.court = detailsData.court;
-      this.lawyer = detailsData.lawyer;
-      this.previewImage = detailsData.previewImage;
-    }, 
   },
-
-  mounted(){
-    this.getdetails() ;
-  }
-  /*  async mounted() {
-    try {
-      const res = await axios.get(` http://localhost:3000/details`);
-      this.datas = res.data;
-    } catch (error) {
-      console.log(error);
-    }
-  }, */
 };
 </script>
 
@@ -169,6 +213,7 @@ button {
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+ 
 }
 
 /* Modal Content/Box */
@@ -177,15 +222,21 @@ button {
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 100%;
-  color: green;
+  width: 50%;
   border-radius: 8px;
   height: auto;
-}
 
+
+}
+.modal-content h5 {
+  text-align: center;
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+}
 /* The Close Button */
 .close {
-  color: #aaa;
+  color: red;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -198,10 +249,21 @@ button {
   cursor: pointer;
 }
 
-.modal-content table {
-  color: black;
-  font-size: 12px;
+ .details {
+  display: flex;
   font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  margin-top: 20px;
+
+  color: black;
+}
+.details > div {
+  width: 300px;
+  
+} 
+.details h4{
+  font-size: 14px!important;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: bolder;
 }
 
