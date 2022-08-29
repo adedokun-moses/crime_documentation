@@ -19,10 +19,10 @@
     <div class="igp_speech">
       <div style="flex-basis: 20%; text-align: center" class="igpimage">
         <img src="../assets/igp.jpg" />
-        <p style="text-align: center">
-          IGP Usman Alkali Baba, psc (+), fdc, NPM <br />
+        <h3 style="text-align: center">
+          IGP Usman Alkali Baba, <br> psc (+), fdc, NPM <br />
           Inspector General of Police
-        </p>
+        </h3>
       </div>
       <div>
         <h4>
