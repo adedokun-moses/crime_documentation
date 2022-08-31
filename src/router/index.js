@@ -9,6 +9,11 @@ import Trackingdet from '../views/trackingdet.vue'
 import About from '../views/about.vue'
 import Reset from '../views/reset.vue'
 
+/* const loadComponent = (view) => {
+  return () => import(`../views/${view}.vue`);
+}
+
+ */
 
 const routes = [
   {

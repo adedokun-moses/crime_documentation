@@ -59,14 +59,15 @@
 
 
 <script>
+import { defineAsyncComponent } from 'vue'
+const Intro = defineAsyncComponent(() =>  import('../components/intro.vue'));
 import Nav from "../components/nav.vue";
-import Intro from "../components/intro.vue";
+//import Intro from "../components/intro.vue";
 import Footer from "../components/footer.vue";
 import Modal from "../components/modal.vue";
 import convictColRef from "../firebase";
 import { getDocs, doc, deleteDoc } from "firebase/firestore";
-//import data from "/data.json";
-//import axios from "axios";
+
 export default {
   components: { Nav, Intro, Footer, Modal },
   data() {

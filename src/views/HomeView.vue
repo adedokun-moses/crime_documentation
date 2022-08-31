@@ -96,7 +96,6 @@ body {
   background: rgb(112, 112, 247);
   padding: 0px;
   margin: 0px;
-
 }
 
 .details h5,
