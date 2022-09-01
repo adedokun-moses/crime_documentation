@@ -1,66 +1,67 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import Homepage from '../views/homepage.vue'
-import Dashboard from '../views/dashboard.vue'
-import CriminalCase from '../views/criminalcase.vue'
-import ConvictedCase from '../views/convictedcase.vue'
-import Tracking from '../views/tracking.vue'
-import Trackingdet from '../views/trackingdet.vue'
-import About from '../views/about.vue'
-import Reset from '../views/reset.vue'
-
-/* const loadComponent = (view) => {
-  return () => import(`../views/${view}.vue`);
-}
-
- */
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+   // component: HomeView
+    component: () =>
+    import(/* webpackChunkName: "home" */ "../views/HomeView.vue")
+    
   },
   {
     path: '/reset',
     name: 'reset',
-    component: Reset
+    component: () =>
+    import(/* webpackChunkName: "reset" */ "../views/reset.vue")
+   
   },
   {
     path: '/homepage',
     name: 'homepage',
-    component: Homepage
+    component: () =>
+    import(/* webpackChunkName: "homepage" */ "../views/homepage.vue")
+   
   },
   {
     path: '/dashboard',
     name: 'dashboard',
-    component: Dashboard
+    component: () =>
+    import(/* webpackChunkName: "dashboard" */ "../views/dashboard.vue")
   },
   {
     path: '/criminalcase',
     name: 'criminalcase',
-    component: CriminalCase
+    component: () =>
+    import(/* webpackChunkName: "criminalcase" */ "../views/criminalcase.vue")
   },
   {
     path: '/convictedcase',
     name: 'convictedcase',
-    component: ConvictedCase
+    component: () =>
+    import(/* webpackChunkName: "convictedcase" */ "../views/convictedcase.vue")
   },
   {
     path: '/tracking',
     name: 'tracking',
-    component: Tracking
+    component: () =>
+    import(/* webpackChunkName: "tracking" */ "../views/tracking.vue")
   },
   {
     path: '/trackingdet/:id',
     name: 'trackingdet',
-    component: Trackingdet
+    component: () =>
+    import(/* webpackChunkName: "trackingdet" */ "../views/trackingdet.vue")
+ 
   },
 
   {
     path: '/about',
     name: 'about',
-    component: About
+    component: () =>
+    import(/* webpackChunkName: "about" */ "../views/about.vue")
+ 
+   
   }
 ]
 
