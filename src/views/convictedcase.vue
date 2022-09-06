@@ -346,7 +346,7 @@ form {
 .group_ input {
   width: 95%;
   margin: 10px 0px;
-  padding: 13px 0px;
+  padding: 13px 10px;
   outline: none;
 }
 .formgroup__ {
@@ -420,17 +420,17 @@ form {
   }
 
   .formgroup input {
-    width: 100%;
+    width: 92%;
   }
   .group_ input {
-    width: 100%;
+    width: 89%;
   }
 
   .group select {
-    padding: 13px 93px;
+    padding: 13px 10px;
     margin: 10px 6px;
     outline: none;
-    width: 100%;
+    width: 96%;
   }
   .group {
     display: block;
@@ -440,7 +440,7 @@ form {
     display: block;
   }
   .statement input {
-    width: 100%;
+    width: 92%;
   }
 
   .formgroup__ {
@@ -448,7 +448,7 @@ form {
   }
 
   .formgroup__ > div {
-    width: 100%;
+    width: 98%;
   }
 
   .submitbtn button {
