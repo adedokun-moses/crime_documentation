@@ -126,8 +126,8 @@
 
 <script>
 import Nav from "../components/nav.vue";
-import { defineAsyncComponent } from 'vue'
-const Intro = defineAsyncComponent(() =>  import('../components/intro.vue'));
+import { defineAsyncComponent } from "vue";
+const Intro = defineAsyncComponent(() => import("../components/intro.vue"));
 import Footer from "../components/footer.vue";
 import state from "/states.json";
 //import axios from "axios";
@@ -186,8 +186,8 @@ export default {
         alert("All Field Must Be Filled");
       } else {
         const addedDoc = await addDoc(convictColRef, this.$data);
-        alert("Details Added Sucessfully!")
-        this.$router.push("/tracking")
+        alert("Details Added Sucessfully!");
+        this.$router.push("/tracking");
         console.log(addedDoc);
       }
 
@@ -328,7 +328,7 @@ form {
 }
 .group select {
   padding: 13px 92px 13px 60px;
-  margin: 10px 5px ;
+  margin: 10px 5px;
   outline: none;
   background: none;
   border: 1px solid;
@@ -381,7 +381,6 @@ form {
     flex-direction: column;
     width: 90%;
     margin: auto;
-   
   }
   .imagelog {
     margin: 10px auto;
@@ -405,32 +404,32 @@ form {
     outline: none;
     border: none;
   }
-  form {
-  width: 100%;
-  margin: 0px;
-}
-
   .formgroup_ {
     display: block;
   }
   .formgroup_ > div {
     margin: 7px 5px;
     width: 100%;
+  }
+  .formgroup__ {
+    display: block;
+  }
 
+  .formgroup__ > div {
+    width: 100%;
   }
 
   .formgroup input {
-    width: 92%;
+    width: 100%;
   }
   .group_ input {
-    width: 89%;
+    width: 100%;
   }
-
   .group select {
-    padding: 13px 10px;
-    margin: 10px 6px;
+    padding: 13px 93px;
+    margin: 0px 0px;
     outline: none;
-    width: 96%;
+    width: 100%;
   }
   .group {
     display: block;
@@ -440,17 +439,8 @@ form {
     display: block;
   }
   .statement input {
-    width: 92%;
+    width: 100%;
   }
-
-  .formgroup__ {
-    display: block;
-  }
-
-  .formgroup__ > div {
-    width: 98%;
-  }
-
   .submitbtn button {
     width: 100%;
     display: inline-block;
